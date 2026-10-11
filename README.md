@@ -5,8 +5,9 @@ the code, the Claude Projects and their routines, the agents inside the product,
 calls, and the ones still on paper. For each one it says where the agent lives, what triggers it,
 which model runs it, what it may touch and what it may not.
 
-**Status:** new, not yet a submodule of the [umbrella](https://github.com/marola-dev/marola). The
-design MIP comes later. Inventory read on 2026-10-11 from every repo's `main`.
+**Status:** a submodule of the [umbrella](https://github.com/marola-dev/marola) since
+marola-dev/marola#793, published at <https://docs.marola.dev/5-Repos/marola-agents/>. The design
+MIP comes later. Inventory read on 2026-10-11 from every repo's `main`.
 
 Nothing here is loaded by Claude Code or any other tool. Each agent keeps living in the repo that
 runs it, and this repo describes it. Skills are catalogued separately, in
@@ -87,7 +88,48 @@ A planned agent moves to its section above when the PR that adds it merges.
   local Ollama model; CI's run on free tiers or inside the job.
 - **No model id, secret or session link in a file pushed to a repo.** A row names the model as
   its definition does, never a dated id.
-- The org invariants apply as in every marola repo: [AGENTS.md](AGENTS.md).
+- The org invariants apply as in every marola repo: the umbrella's
+  [AGENTS.md](https://github.com/marola-dev/marola/blob/main/AGENTS.md).
+
+## Agent docs already in marola
+
+What marola has already written about agents, in the umbrella unless a repo is named.
+
+| Doc | What it covers |
+|---|---|
+| [Chat and MCP](https://docs.marola.dev/1-Using-marola/CHAT-AND-MCP/) | Running the chat server behind the site's widget, and the MCP server for an outside agent |
+| [Architecture](https://docs.marola.dev/2-Building-marola/ARCHITECTURE/) | Where the summarizer, the reviewer and the MCP server sit in the pipeline |
+| [Agent skills](https://docs.marola.dev/3-Ways-of-working/AGENT-SKILLS/) | Which Claude Code skills marola uses, which repo has each, when to reach for them |
+| [Dev flow](https://docs.marola.dev/3-Ways-of-working/DEV-FLOW/) | Issue to MIP to stacked PRs: the flow the coding agents follow |
+| [Gemini Code Assist](https://docs.marola.dev/4-Research-and-plans/GEMINI-CODE-ASSIST/) | The free, on-request Gemini review on PRs |
+| [Agent stack survey](https://docs.marola.dev/4-Research-and-plans/AGENT-STACK-SURVEY/) | Three agent toolkits against the MIPs, and the design of a Q&A agent about marola itself |
+| [Multi-agent frameworks survey](https://docs.marola.dev/4-Research-and-plans/AGENT-FRAMEWORKS-SURVEY/) | Multi-agent frameworks on the JVM and where Apache Pekko would fit |
+| [Awesome agentic engineering](https://docs.marola.dev/4-Research-and-plans/AWESOME-AGENTIC-ENGINEERING/) | marola's own curated list of agent tools and practices (MIP-0043) |
+| [Future work](https://docs.marola.dev/4-Research-and-plans/FUTURE-WORK/) | The planned agents in the table above |
+| [MIP-0011](https://docs.marola.dev/6-MIPs/MIP-0011-claude-code-best-practices/) | Hooks, permissions, subagents and skills in Claude Code |
+| [MIP-0017](https://docs.marola.dev/6-MIPs/MIP-0017-agentic-tooling-survey/) | Agentic tooling ideas taken from other repos |
+| [MIP-0040](https://docs.marola.dev/6-MIPs/MIP-0040-validating-the-reviewer-judge/) | Measuring the reviewer as a judge, then making it a small jury |
+| [MIP-0076](https://docs.marola.dev/6-MIPs/MIP-0076-agent-routing-tooling/) | How an agent finds things across repos: the wiring table and the graph |
+| [Chat widget](https://docs.marola.dev/5-Repos/marola-site/1-design_chat-widget/) (marola-site) | The site's front end for the ask agent |
+| [Prompt compile](https://docs.marola.dev/5-Repos/marola-ml/3-development_prompt-compile/) (marola-ml) | The DSPy compile of the summarizer and reviewer prompts |
+
+## Awesome lists
+
+Outside lists worth reading before adding an agent here. Checked to exist and not be archived on
+2026-10-11; star counts change, so none are quoted.
+
+- [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents): autonomous AI
+  agents, open source and closed.
+- [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code): Claude
+  Code skills, agents, hooks, status lines and plugins.
+- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents):
+  over a hundred Claude Code subagent definitions, one per job.
+- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills): agent
+  skills from tool vendors and the community.
+- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers): MCP servers,
+  the protocol marola's tool server speaks.
+- [WooooDyy/LLM-Agent-Paper-List](https://github.com/WooooDyy/LLM-Agent-Paper-List): the papers
+  behind the survey "The Rise and Potential of Large Language Model Based Agents".
 
 ## Keeping it current
 
@@ -98,4 +140,5 @@ agent is defined, so `git grep` or a look at that file checks it.
 
 - [marola-skills](https://github.com/marola-dev/marola-skills): the catalogue of skills
 - [The umbrella](https://docs.marola.dev/): MIPs, phase list, ways of working
-- [AGENTS.md](AGENTS.md): what an agent may and may not do in this repo
+- [AGENTS.md](https://github.com/marola-dev/marola/blob/main/AGENTS.md): what an agent may and
+  may not do in every marola repo
